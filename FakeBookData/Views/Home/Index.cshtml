@@ -1,0 +1,47 @@
+﻿@using FakeBookData.ViewModels
+@model HomeIndexViewModel
+
+<div class="application mt-5">
+    <div class="toolbar d-flex justify-content-around align-items-center p-2">
+
+        <div class="input-wrapper">
+            <select id="language-select" class="form-select toolbar-tool language-select">
+                <option value="En">English (US)</option>
+                <option value="Nl">Dutch (NL)</option>
+                <option value="Ru">Russian (RU)</option>
+            </select>
+            <label for="language-select">Language</label>
+        </div>
+
+        <div class="input-wrapper">
+            <input id="seed-input" class="form-control toolbar-tool seed-input" type="text" maxlength="8" value="500000" />
+            <label class="seed-label" for="seed-input">Seed</label>
+            <button class="seed-shuffle-button"><i class="fa-solid fa-shuffle"></i></button>
+        </div>
+        <div class="input-wrapper range-wrapper">
+            <label class="likes-label align-text-bottom" for="likes-input">Likes: <span class="likes-output">5</span></label>
+            <input id="likes-input" class="form-range align-text-bottom toolbar-tool likes-input" type="range" min="0" max="10" step="0.1" value="5" />
+        </div>
+        <div class="input-wrapper">
+            <label for="reviews-input">Reviews</label>
+            <input id="reviews-input" class="form-control toolbar-tool reviews-input" type="number" min="0" max="10" step="0.1" value="3" />
+        </div>
+    </div>
+    <section class="books-section">
+        <header class="books-section-header pt-3 row flex-nowrap">
+            <p class="column-heading col-auto"></p>
+            <p class="column-heading index-heading col-1">Index</p>
+            <p class="column-heading col-1">ISBN</p>
+            <p class="column-heading col-1">Title</p>
+            <p class="column-heading col-1">Author(s)</p>
+            <p class="column-heading col-1">Publisher</p>
+        </header>
+        <div class="books-section-main">
+            <ul class="book-list">
+                @await Html.PartialAsync("BookList", Model)
+            </ul>
+        </div>
+    </section>
+    <div id="intersection-target"></div>
+    <div class="spinner"></div>
+</div>

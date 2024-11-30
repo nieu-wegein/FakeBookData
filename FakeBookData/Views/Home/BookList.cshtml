@@ -1,0 +1,49 @@
+﻿@using FakeBookData.ViewModels
+@model HomeIndexViewModel
+@{
+    @foreach (var book in Model.Books)
+    {
+        string AuthorList = String.Join(", ", book.AuthorList);
+        <li>
+            <div class="book-info-row row flex-nowrap">
+                <p class="book-row-cell col-auto"><i class="fa-solid fa-chevron-down"></i></p>
+                <p class="book-row-cell col-1 index-cell">@(Model.StartIndex++)</p>
+                <p class="book-row-cell col-2">@book.ISBN </p>
+                <p class="book-row-cell col-2">@book.Title </p>
+                <p class="book-row-cell col-2">@AuthorList</p>
+                <p class="book-row-cell col-2">@book.Publisher </p>
+            </div>
+            <div class="book-info-section pt-4 pb-5">
+                <div class="book-cover">
+                    <p class="book-author-cover">@AuthorList</p>
+                    <p class="book-title-cover">@book.Title</p>
+                    <img width="240" height="320" class="book-cover-image" src=@book.CoverUrl alt="Book cover" />
+                </div>
+                <div class="book-content flex-grow-1 ps-5">
+                    <div class="align-text-bottom mb-4">
+                        <h3 class="book-title mb-1">@book.Title</h3>
+                        <p class="book-author mb-3"><i>@AuthorList</i></p>
+                        <p class="book-publisher mb-1"><span>Publisher:</span> @book.Publisher</p>
+                        <p class="book-publisher mb-1"><span>Year:</span> @book.Year.Year</p>
+                        <p class="book-publisher mb-4"><span>Pages:</span> @book.PageCount</p>
+                        <p class="book-likes"><i class="fa-solid fa-thumbs-up"></i> @book.LikeCount @(book.LikeCount == 1 ? "person likes" : "people like") this book</p>
+                    </div>
+                    <div class="book-review-section pt-3 pe-5">
+                        <div class="book-review-header">
+                            <h4 class="mb-0 d-inline-block">Reviews</h4>
+                            <p class="book-review-count align-text-bottom mb-0 d-inline-block">(@book.Reviews.Count review)</p>
+                        </div>
+                        <hr />
+                        @foreach (var review in book.Reviews)
+                        {
+                            <div class="book-review-main mb-3">
+                                <p class="book-review-author mb-1 me-2">@review.Author</p>
+                                <p class="book-review-content mb-3">@review.Content</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </li>
+    }
+}

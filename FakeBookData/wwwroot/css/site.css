@@ -1,0 +1,197 @@
+html {
+	font-size: 14px;
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+.btn:focus, 
+.btn:active:focus, 
+.btn-link.nav-link:focus, 
+.form-control:focus, 
+.form-check-input:focus {
+	box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 60px;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	padding: 0;
+}
+
+.container {
+	padding: 0;
+}
+
+.toolbar {
+	position: sticky;
+	top: 0;
+	background-color: rgb(244, 246, 247);
+	z-index: 1;
+}
+
+.input-wrapper {
+	position: relative;
+	width: 220px;
+	margin-right: 20px;
+	font-size: 14px;
+}
+
+	.input-wrapper > label {
+		top: 2px;
+		left: 12px;
+		position: absolute;
+		font-size: 14px;
+		color: rgb(128, 128, 125);
+	}
+
+	.input-wrapper > .form-control,
+	.input-wrapper > .form-select {
+		height: 50px;
+		padding-top: 21px;
+		font-size: 14px;
+	}
+
+.seed-shuffle-button {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	font-size: 18px;
+	border: none;
+	background-color: transparent;
+	top: 10%;
+	right: 10px;
+}
+
+.range-wrapper {
+	position: relative;
+	width: 250px;
+	padding-top: 20px;
+}
+
+	.range-wrapper > label {
+		left: 0;
+	}
+
+.books-section {
+	overflow: clip;
+}
+
+.books-section-header {
+	position: sticky;
+	top: 65px;
+	background-color: #fff;
+	border-bottom: 1px solid rgb(128, 128, 128);
+	z-index: 1;
+}
+
+.column-heading:first-child {
+	width: 95px;
+}
+
+.column-heading:nth-child(n+3) {
+	font-weight: 600;
+	flex-grow: 1;
+	max-width: 260px;
+}
+
+.index-heading {
+	font-weight: 600;
+	margin-right: 30px;
+}
+
+.book-info-row {
+	border-bottom: 1px solid rgb(221, 220, 220);
+	padding: 10px 0;
+}
+
+	.book-info-row:hover {
+		background-color: rgba(205, 224, 255, 0.3);
+		cursor: pointer;
+	}
+
+.book-row-cell {
+	margin: 0;
+}
+
+	.book-row-cell:first-child {
+		width: 95px;
+		padding: 0 50px 0 25px;
+	}
+
+.index-cell {
+	margin-right: 30px;
+}
+
+.book-row-cell:nth-child(n+3) {
+	flex-grow: 1;
+	max-width: 260px;
+	padding-right: 30px;
+}
+
+.book-cover {
+	position: relative;
+	width: 240px;
+	height: 320px;
+	overflow: hidden;
+}
+
+.book-author-cover,
+.book-title-cover {
+	position: absolute;
+	width: 100%;
+	padding: 0 15px;
+	text-align: center;
+	font-weight: 800;
+	line-height: 1.2;
+	color: white;
+}
+
+.book-author-cover {
+	font-size: 14px;
+	-webkit-text-stroke: 0.7px black;
+}
+
+.book-title-cover {
+	top: 100px;
+	font-size: 22px;
+	-webkit-text-stroke: 1px black;
+}
+
+.book-info-section {
+	display: none;
+	background-color: rgb(241, 245, 246);
+	padding-left: 30px;
+}
+
+.book-title {
+	vertical-align: top;
+}
+
+.book-author {
+	color: rgb(128, 128, 128);
+}
+
+.book-publisher span,
+.book-review-author {
+	font-weight: 500;
+}
+
+.book-review-count {
+	color: rgb(141, 141, 141);
+}
